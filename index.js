@@ -15,8 +15,8 @@ let BeaconBroadcastPlatform;
 
 if (Platform.OS === 'ios') {
   BeaconBroadcastPlatform = {
-    startAdvertisingBeaconWithString: function (uuid, identifier, major, minor) {
-      NativeBeaconBroadcast.startSharedAdvertisingBeaconWithString(uuid, major, minor, identifier);
+    startAdvertisingBeaconWithString: function (uuid, identifier, major, minor, frequency, power) {
+      NativeBeaconBroadcast.startSharedAdvertisingBeaconWithString(uuid, major, minor, identifier, frequency, power);
     },
 
     stopAdvertisingBeacon: function () {
@@ -44,8 +44,8 @@ else {
         });
       });
     },
-    startAdvertisingBeaconWithString: function (uuid, identifier, major, minor, onError) {
-      NativeBeaconBroadcast.startSharedAdvertisingBeaconWithString(uuid, major, minor, identifier, onError);
+    startAdvertisingBeaconWithString: function (uuid, identifier, major, minor, frequency, power) {
+      NativeBeaconBroadcast.startSharedAdvertisingBeaconWithString(uuid, major, minor, identifier, frequency, power);
     },
 
     stopAdvertisingBeacon: function () {
